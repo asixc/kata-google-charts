@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Peso', 'Pecho', 'Abdomen', 'Cintura'],
+          ['Semana 1', 69.250,	91,	88,	83],
+          ['Semana 2', 69.100,	88,	87,	81],
+          ['Semana 3', 68.250, 88,	86,	80],
+        ]);
+
+        var options = {
+          title: 'Reto Septiembre',
+          curveType: 'function',
+          legend: { position: 'right' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 1200px; height: 600px"></div>
+  </body>
+</html>
